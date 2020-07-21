@@ -40,6 +40,7 @@
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.8.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnectToJosee.cs" />
+    <Compile Include="DbUtilities.cs" />
+    <Compile Include="Entities\TrendRecords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
