@@ -14,9 +14,11 @@ namespace TwoDatabases
 {
     public class DbConnectToJosee
     {
-        public static void GetTrendData(string connectionString)
+        public static string GetTrendData(string connectionString)
         {
             //List<TrendRecords> trendTransactions = new List<TrendRecords>();
+
+            OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee"));
 
             string queryString =
             "SELECT cd_tsa.trend_service_account_id, "
@@ -45,8 +47,9 @@ namespace TwoDatabases
 
                 reader.Close();
             }
-            //return connectionString;
+            return connectionString;
         }
+
 
         
 

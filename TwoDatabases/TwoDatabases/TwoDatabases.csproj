@@ -53,6 +53,7 @@
     <Compile Include="DbConnectToJosee.cs" />
     <Compile Include="DbUtilities.cs" />
     <Compile Include="Entities\TrendRecords.cs" />
+    <Compile Include="OraclTypesExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

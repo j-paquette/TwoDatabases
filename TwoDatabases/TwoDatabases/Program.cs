@@ -15,7 +15,6 @@ namespace TwoDatabases
     {
         static void Main(string[] args)
         {
-            
 
             Console.WriteLine(DbUtilities.GetConnectionString("localhost", "xe_josee"));
 
