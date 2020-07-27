@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectToDifferentDatabases.cs" />
     <Compile Include="DbConnectToJosee.cs" />
     <Compile Include="DbUtilities.cs" />
+    <Compile Include="DbUtilitiesSecondTry.cs" />
     <Compile Include="Entities\TrendRecords.cs" />
     <Compile Include="OraclTypesExample.cs" />
     <Compile Include="Program.cs" />
