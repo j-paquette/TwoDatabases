@@ -8,7 +8,7 @@ using Oracle.DataAccess.Client;
 using System.Data.OleDb;
 using Oracle.DataAccess.Types;
 using System.Data;
-using System.Data.OracleClient;
+//using System.Data.OracleClient;
 //using System.Data.OracleClient;
 
 namespace TwoDatabases
