@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess;
 using System.Data.OleDb;
-using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.Types;
 using System.Data;
-//using System.Data.OracleClient;
-//using System.Data.OracleClient;
+using TwoDatabases.Entities;
 
 namespace TwoDatabases
 {
@@ -46,6 +46,7 @@ namespace TwoDatabases
                         OracleDataReader reader = cmd.ExecuteReader();
                         while(reader.Read())
                         {
+
                             Console.WriteLine(reader.GetString(0));
                         }
 
@@ -180,11 +181,24 @@ namespace TwoDatabases
 
                         OracleCommand cursCmd = new OracleCommand("CURSPKG.OPEN_ONE_CURSOR", con);
                         cursCmd.CommandType = CommandType.StoredProcedure;
-                        cursCmd.Parameters.Add("TRENDCURSOR", OracleType.Cursor).Direction = ParameterDirection.Output;
+                        cursCmd.Parameters.Add("TRENDCURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
                         OracleDataReader reader = cursCmd.ExecuteReader();
+
+                        Console.WriteLine("\nService Acct ID\tService Acct Code\tService Acct Name\tTransactions");
+
+                        while (reader.Read()) Console.WriteLine("{0}\t{1}, {2}", reader.GetOracleValue(0), reader.GetOracleString(1), reader.GetOracleString(2), reader.GetOracleString(3));
+
+                        reader.NextResult();
+
+                        reader.Close();
+                        con.Close();
                     }
-                
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
                 }
             }
         }
