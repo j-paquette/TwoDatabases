@@ -18,7 +18,14 @@ namespace TwoDatabases
 
             Console.WriteLine(DbUtilities.GetConnectionString("localhost", "xe_josee"));
 
+            //ConnectToDifferentDatabases connectToDifferentDatabases = new ConnectToDifferentDatabases();
+
+
+            //Console.WriteLine(connectToDifferentDatabases);
+
             ConnectToDifferentDatabases.GetDataFromOpenOneCursor();
+
+            //Console.WriteLine($"Display Trend data: {}");
 
             //ConnectionStringSettings connStr = DbUtilities.GetConnectionString();
 
