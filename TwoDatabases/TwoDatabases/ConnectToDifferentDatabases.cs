@@ -197,12 +197,12 @@ namespace TwoDatabases
                     {
                         Console.WriteLine(ex.Message);
                     }
-
+                    Console.ReadLine();
                 }
             }
         }
 
-        public  GetCursorFunction()
+        public static void GetCursorFunction()
         {
             string conString = DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee");
             using (OracleConnection con = new OracleConnection(conString))
@@ -290,8 +290,10 @@ namespace TwoDatabases
                         //Let's retrieve the results from the DataReaders
                         while (dr1.Read())
                         {
-                            Console.WriteLine("Employee Name: " + dr1.GetString(0) + ", " +
-                              "Employee Dept:" + dr1.GetDecimal(1));
+                            Console.WriteLine("trend_service_account_id: " + dr1.GetInt64(0) + ", " +
+                              "trend_service_account_code:" + dr1.GetString(1) + ", " +
+                              "service_name: " + dr1.GetString(2) + ", " +
+                              "Transactions: " + dr1.GetInt32(3));
                         }
                         Console.WriteLine();
 
@@ -310,11 +312,11 @@ namespace TwoDatabases
 
                         //Clean up
                         p1.Dispose();
-                        p2.Dispose();
-                        p3.Dispose();
+                        //p2.Dispose();
+                        //p3.Dispose();
                         dr1.Dispose();
-                        dr2.Dispose();
-                        dr3.Dispose();
+                        //dr2.Dispose();
+                        //dr3.Dispose();
 
                         Console.WriteLine("Press 'Enter' to continue");
                     }
