@@ -18,7 +18,7 @@ namespace TwoDatabases
         {
             //List<TrendRecords> trendTransactions = new List<TrendRecords>();
 
-            OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee"));
+            OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee"));
 
             string queryString =
             "SELECT cd_tsa.trend_service_account_id, "

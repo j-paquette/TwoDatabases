@@ -9,20 +9,11 @@ namespace TwoDatabases
 {
     public class DbUtilitiesSecondTry
     {
-        public static string GetDifferentConnectionString(string keyname)
+        public static string GetDifferentConnectionStringByName(string keyname)
         {
-            string connection = string.Empty;
-            switch (keyname)
-            {
-                case "xe_josee":
-                    connection = ConfigurationManager.ConnectionStrings["xe_josee"].ConnectionString;
-                    break;
-                case "xe_user_client_details":
-                    connection = ConfigurationManager.ConnectionStrings["xe_user_client_details"].ConnectionString;
-                    break;
-                default:
-                    break;
-            }
+            //string connection = string.Empty;
+
+            var connection = ConfigurationManager.ConnectionStrings[keyname]?.ConnectionString;
             return connection;
         }
     }

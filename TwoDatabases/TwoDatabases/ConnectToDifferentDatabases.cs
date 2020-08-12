@@ -20,7 +20,7 @@ namespace TwoDatabases
             //OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee"));
 
 
-            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee")))
+            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee")))
             {
                 using (OracleCommand cmd = con.CreateCommand())
                 {
@@ -68,7 +68,7 @@ namespace TwoDatabases
 
         public void GetDataFromServiceAccountClientDetails()
         {
-            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_user_client_details")))
+            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_user_client_details")))
             {
                 using (OracleCommand cmd = con.CreateCommand())
                 {
@@ -170,7 +170,7 @@ namespace TwoDatabases
 
         public static void GetDataFromOpenOneCursor()
         {
-            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee")))
+            using (OracleConnection con = new OracleConnection(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee")))
             {
                 using (OracleCommand cmd = con.CreateCommand())
                 {
@@ -204,7 +204,7 @@ namespace TwoDatabases
 
         public static void GetCursorFunction()
         {
-            string conString = DbUtilitiesSecondTry.GetDifferentConnectionString("xe_josee");
+            string conString = DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee");
             using (OracleConnection con = new OracleConnection(conString))
             {
                 using (OracleCommand cmd = con.CreateCommand())

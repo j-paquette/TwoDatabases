@@ -9,7 +9,7 @@ namespace TwoDatabases.Entities
     public class TrendRecord
     {
         public int TrendServiceAcctId { get; set; }
-        public int TrendServiceAcctCode { get; set; }
+        public string TrendServiceAcctCode { get; set; }
         public string ServiceName { get; set; }
         public int Transactions { get; set; }
     }

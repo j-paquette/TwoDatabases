@@ -53,12 +53,14 @@
   <ItemGroup>
     <Compile Include="ConnectToDifferentDatabases.cs" />
     <Compile Include="DbConnectToJosee.cs" />
-    <Compile Include="DbUtilities.cs" />
     <Compile Include="DbUtilitiesSecondTry.cs" />
-    <Compile Include="Entities\TrendRecords.cs" />
+    <Compile Include="Entities\ServiceAcctClientDetailsRecord.cs" />
+    <Compile Include="Entities\TrendRecord.cs" />
     <Compile Include="OraclTypesExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAccountClientDetailsData.cs" />
+    <Compile Include="TrendData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

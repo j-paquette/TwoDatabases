@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using System.Data.OleDb;
+using TwoDatabases.Entities;
 
 namespace TwoDatabases
 {
@@ -15,20 +16,32 @@ namespace TwoDatabases
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee"));
 
-            Console.WriteLine(DbUtilities.GetConnectionString("localhost", "xe_josee"));
+            List<TrendRecord> trendRecords = TrendData.GetTrendRecordList(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_josee"));
 
-            //ConnectToDifferentDatabases.GetDataFromOpenOneCursor();
+            //get the total# of records in the Trend table
+            Console.WriteLine($"The total # Trend records: {trendRecords.Count}");
 
-            ConnectToDifferentDatabases.GetCursorFunction();
+            foreach(TrendRecord record in trendRecords)
+            {
+                Console.WriteLine($"{record.TrendServiceAcctId}, {record.TrendServiceAcctCode}, {record.ServiceName}, {record.Transactions}");
+            }
 
-            //Console.WriteLine($"Display Trend data: {}");
+            //Get records from Service_account_client_details table
+            Console.WriteLine(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_user_client_details"));
 
-            //ConnectionStringSettings connStr = DbUtilities.GetConnectionString();
+            List<ServiceAcctClientDetailsRecord> ServiceClientDetailsRecords = ServiceAccountClientDetailsData.GetServiceClientDetailsList(DbUtilitiesSecondTry.GetDifferentConnectionStringByName("xe_user_client_details"));
 
-            //Console.WriteLine(DbConnectToJosee.GetTrendData());
+            //get the total# of records in the Service_account_client_details table
+            Console.WriteLine($"The total # Service_client_details records: {ServiceClientDetailsRecords.Count}");
 
-            //Console.WriteLine(DbConnectToJosee.GetTrendData(DbUtilities.GetConnectionString("xe_josee", connStr)));
+            foreach (ServiceAcctClientDetailsRecord record in ServiceClientDetailsRecords)
+            {
+                Console.WriteLine($"{record.ServiceAcctID}, {record.ServiceAcctCode}, {record.CsdUrl}, {record.ContactEmail}");
+            }
+
+
         }
     }
 }
