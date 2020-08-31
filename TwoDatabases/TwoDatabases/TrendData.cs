@@ -59,8 +59,6 @@ namespace TwoDatabases
                                 //reader.Dispose();
                             }
                         }
-                        //Execute the command and use DataReader to display the data
-                        //Console.WriteLine();
 
                         //Reset OracleCommand for next job
                         //cmd.Parameters.Clear();
